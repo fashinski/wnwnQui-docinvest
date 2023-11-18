@@ -16,13 +16,14 @@ const nextConfig = {
   },
 
   webpack: (
-    config,
-    { buildId, dev, isServer, defaultLoaders, webpack }
-  ) => {
-    config.resolve.alias.canvas = false
-    config.resolve.alias.encoding = false
-    return config
+   
+const nextConfig = {
+  reactStrictMode: false,
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
